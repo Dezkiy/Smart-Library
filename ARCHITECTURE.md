@@ -1,8 +1,7 @@
 
-```mermaid
 C4Context
     title Smart Library System - System Context Diagram
-    
+
     Person(member, "Library Member", "A person who borrows books and accesses library resources")
     System(librarySystem, "Smart Library System", "Manages library resources and member interactions")
     System_Ext(database, "Library Database", "Stores library data", $sprite="Database")
@@ -13,7 +12,6 @@ C4Context
     Rel(librarySystem, digitalContent, "Stores and retrieves digital content", "Stores & Retrieves")
 
     UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="3")
-    
     ' Styling
     skinparam {
         shadowing false
