@@ -19,6 +19,3 @@ This system will enable:
 * [ARCHITECTURE.md](ARCHITECTURE.md)
 * [SPECIFICATION.md](SPECIFICATION.md)
 * [ARCHITECTURE.md](ARCHITECTURE.md)
-* [STAKEHOLDER Analysis.md](Stakeholder Analysis.md)
-* [FUNCTIONAL_REQUIREMENTS.md](FUNCTIONAL REQUIREMENTS.md)
-* [NON_FUNCTIONAL_REQUIREMENTS.md](Non-functional Requirements.md)
