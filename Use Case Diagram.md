@@ -1,23 +1,23 @@
 ```mermaid
-   %% Use Case Diagram for Smart Library System
+   usecase "Use Case Diagram for Smart Library System"
    
-   actor "Library Member" as Member
-   actor "Librarian" as Librarian
-   actor "IT Staff" as IT
-   actor "Admin" as Admin
-   actor "Digital Content Provider" as Provider
-   actor "Library Staff" as Staff
+   actor LibraryMember as Member
+   actor Librarian as Librarian
+   actor ITStaff as IT
+   actor Admin as Admin
+   actor DigitalContentProvider as Provider
+   actor LibraryStaff as Staff
    
-   usecase "Search Resources" as Search
-   usecase "Borrow Resources" as Borrow
-   usecase "Return Resources" as Return
-   usecase "Reserve Resources" as Reserve
-   usecase "Manage Member Accounts" as ManageAccounts
-   usecase "Catalog Resources" as Catalog
-   usecase "Manage Digital Content" as ManageContent
-   usecase "Generate Reports" as Reports
-   usecase "Process Payments" as Payments
-   usecase "Manage Events" as Events
+   usecase SearchResources as Search
+   usecase BorrowResources as Borrow
+   usecase ReturnResources as Return
+   usecase ReserveResources as Reserve
+   usecase ManageMemberAccounts as ManageAccounts
+   usecase CatalogResources as Catalog
+   usecase ManageDigitalContent as ManageContent
+   usecase GenerateReports as Reports
+   usecase ProcessPayments as Payments
+   usecase ManageEvents as Events
    
    Member -- Search
    Member -- Borrow
