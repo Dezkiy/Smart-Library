@@ -1,4 +1,5 @@
-%% Use Case Diagram for Smart Library System
+```mermaid
+   %% Use Case Diagram for Smart Library System
    
    actor "Library Member" as Member
    actor "Librarian" as Librarian
