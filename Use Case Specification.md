@@ -66,4 +66,45 @@
        2.  The system prompts the librarian or administrator to enter the necessary information (e.g., member details, contact information).
        3.  The system performs the requested action (e.g., creates a new account, updates an existing account, deactivates an account).
    * **Alternative Flows:**
-       *
+       * Invalid data is entered: The system displays an error message and prompts the librarian or administrator to enter valid data.
+       * The account already exists: The system displays a message indicating that the account already exists (when creating a new account).
+   
+   ## 6. Use Case: Catalog Resources
+   
+   * **Description:** This use case allows librarians and administrators to catalog new resources and update existing resource information in the library catalog.
+   * **Preconditions:** The librarian or administrator is logged in.
+   * **Postconditions:** Resource records are added, updated, or deleted in the library catalog.
+   * **Basic Flow:**
+       1.  The librarian or administrator selects the option to add, update, or delete a resource record.
+       2.  The system prompts the librarian or administrator to enter the resource's metadata (e.g., title, author, ISBN).
+       3.  The system performs the requested action (e.g., adds a new record, updates an existing record, deletes a record).
+   * **Alternative Flows:**
+       * Invalid data is entered: The system displays an error message and prompts the librarian or administrator to enter valid data.
+       * The record already exists: The system displays a message indicating that the record already exists (when adding a new record).
+   
+   ## 7. Use Case: Manage Digital Content
+   
+   * **Description:** This use case allows librarians, administrators, and IT staff to manage digital content, including uploading, updating, and removing digital resources.
+   * **Preconditions:** The user (librarian, administrator, or IT staff) is logged in with appropriate permissions.
+   * **Postconditions:** Digital content is added, updated, or removed from the library system.
+   * **Basic Flow:**
+       1.  The user selects the option to upload, update, or remove digital content.
+       2.  The system prompts the user to select the digital file and enter relevant metadata.
+       3.  The system performs the requested action (e.g., uploads a new file, updates an existing file, removes a file).
+   * **Alternative Flows:**
+       * Invalid file format: The system displays an error message and prompts the user to select a valid file.
+       * Insufficient storage space: The system displays a message indicating that there is not enough storage space to upload the file.
+   
+   ## 8. Use Case: Generate Reports
+   
+   * **Description:** This use case allows librarians, administrators, and IT staff to generate reports on resource usage, member activity, and other library data.
+   * **Preconditions:** The user (librarian, administrator, or IT staff) is logged in with appropriate permissions.
+   * **Postconditions:** Reports are generated and displayed or exported.
+   * **Basic Flow:**
+       1.  The user selects the type of report to generate (e.g., resource usage report, member activity report).
+       2.  The system prompts the user to specify the report parameters (e.g., date range, filters).
+       3.  The system generates the report based on the specified parameters.
+       4.  The system displays the report or provides an option to export it.
+   * **Alternative Flows:**
+       * No data matches the report parameters: The system displays a message indicating that no data was found for the specified parameters.
+       * Error generating the report: The system displays an error message and prompts the user to try again or contact support.
