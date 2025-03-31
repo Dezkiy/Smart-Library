@@ -37,3 +37,14 @@ This system will enable:
  * **Done:** This column represents the final stage of tasks that have been completed, tested, and are ready for deployment.
 
  These customizations enhance the board's utility by providing a more detailed view of the task lifecycle and supporting a more robust Agile development process.
+
+
+![Screenshot (3)](https://github.com/user-attachments/assets/bdb9fa80-16c5-485a-94c3-6f7f82f6279e)
+
+![Screenshot (4)](https://github.com/user-attachments/assets/04612543-a78c-4999-9ebd-1d7ad571d7d8)
+
+
+
+
+ 
+
