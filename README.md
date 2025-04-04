@@ -20,6 +20,15 @@ This system will enable:
 * [SPECIFICATION.md](SPECIFICATION.md)
 * [ARCHITECTURE.md](ARCHITECTURE.md)
 
+## Assignment 5:
+- [Use Case Diagrams.md](./Use%20Case%20Diagrams.md)
+- [Use Case Specification.md](./Use%20Case%20Specification.md)
+- [Test Case Development.md](./Test%20Case%20Development.md)
+
+## Assignment 6:
+- [User Story Creation.md](./User%20Story%20Creation.md)
+- [Product Backlog Creation.md](./Product%20Backlog%20Creation.md)
+- [Sprint Planning.md](./Sprint%20Planning.md)
 
 
  ## Kanban Board Customization Choices
