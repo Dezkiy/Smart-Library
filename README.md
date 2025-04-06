@@ -53,6 +53,17 @@ This system will enable:
 ![Screenshot (4)](https://github.com/user-attachments/assets/04612543-a78c-4999-9ebd-1d7ad571d7d8)
 
 
+## Assignment 7:
+- [Template Analysis and Selection.md](./Template%20Analysis%20and%20Selection.md)
+- [Kanboard Board Explanation.md](./Kanboard%20Board%20Explanation.md)
+- [Reflection.md](./Reflection.md)
+
+
+## Assignment 8:
+- [Object State Modeling.md](./Object%20State%20Modeling.md)
+- [Activity Workflow Modeling.md](./Activity%20Workflow%20Modeling.md)
+- [Integration with Prior Work.md](./Integration%20with%20Prior%20Work.md)
+- [Reflection Assignment 8.md](./Reflection%20Assignment%208.md)
 
 
  
