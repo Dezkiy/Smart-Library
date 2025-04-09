@@ -21,7 +21,7 @@ This system will enable:
 * [ARCHITECTURE.md](ARCHITECTURE.md)
 
 ## Assignment 5:
-- [Use Case Diagrams.md](./Use%20Case%20Diagrams.md)
+- [Use Case Diagrams.md](./Use%20Case%20Diagram.md)
 - [Use Case Specification.md](./Use%20Case%20Specification.md)
 - [Test Case Development.md](./Test%20Case%20Development.md)
 
