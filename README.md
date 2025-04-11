@@ -65,6 +65,10 @@ This system will enable:
 - [Integration with Prior Work.md](./Integration%20with%20Prior%20Work.md)
 - [Reflection Assignment 8.md](./Reflection%20Assignment%208.md)
 
+## Assignment 9:
+- [Domain Model](Domain%20Model.md)  
+- [Class Diagram in Mermaid](Class%20Diagram%20in%20Mermaid.md)  
+- [Reflection Assignment 9](Reflection%20Assignment%209.md)
 
  
 
