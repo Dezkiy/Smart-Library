@@ -40,5 +40,13 @@ This document describes the domain model for the Smart Library System. It identi
 
 ---
 
+###   Alignment with Prior Assignments
 
+ The Domain Model is designed to align with and build upon the work from previous assignments:
+
+ * **Functional Requirements (Assignment 4):** Entities like `Book`, `LibraryMember`, `Loan`, and `Reservation` directly support functional requirements such as FR-003 (Implement Resource Borrowing), FR-004 (Implement Resource Returning), FR-005 (Implement Resource Reservation), and FR-006 (Implement Member Account Management). The attributes and methods defined here will be crucial for implementing these functionalities.
+ * **Use Cases (Assignment 5):** The entities and their relationships map to various use cases, such as "Borrow a Book" (involving `LibraryMember`, `Book`, `Loan`), "Return a Book" (involving `LibraryMember`, `Book`, `Loan`), and "Reserve a Book" (involving `LibraryMember`, `Book`, `Reservation`).
+ * **State and Activity Diagrams (Assignment 8):** The state transitions of entities like `Book` and `LibraryMember` are driven by the methods defined in this domain model (e.g., `checkOut()` triggers the `Available` to `Borrowed` state transition). Activity diagrams illustrate the workflows involving these entities and their methods.
+
+---
 
