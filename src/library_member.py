@@ -1,7 +1,7 @@
 from typing import Optional
- from datetime import date
+from datetime import date
 
- class LibraryMember:
+class LibraryMember:
     def __init__(self, member_id: str, first_name: str, last_name: str,
                  date_of_birth: date, email: str, phone: str, address: str,
                  registration_date: date, member_type: str,
@@ -17,20 +17,14 @@ from typing import Optional
         self._member_type = member_type
         self._account_status = account_status
 
-    def borrow_book(self, book):  # Book object as parameter
-        # Implementation for borrowing a book (e.g., creating a Loan record)
-        # This will likely interact with the Loan class
-        pass
+    def borrow_book(self, book):
+        raise NotImplementedError("This method will interact with the Loan class.")
 
-    def return_book(self, book):  # Book object as parameter
-        # Implementation for returning a book (e.g., updating a Loan record)
-        # This will likely interact with the Loan class
-        pass
+    def return_book(self, book):
+        raise NotImplementedError("This method will interact with the Loan class.")
 
-    def reserve_book(self, book):  # Book object as parameter
-        # Implementation for reserving a book (e.g., creating a Reservation)
-        # This will likely interact with the Reservation class
-        pass
+    def reserve_book(self, book):
+        raise NotImplementedError("This method will interact with the Reservation class.")
 
     def update_profile(self, new_email: Optional[str] = None,
                        new_phone: Optional[str] = None,
@@ -43,13 +37,14 @@ from typing import Optional
             self._address = new_address
 
     def pay_fine(self, amount: float):
-        # Implementation for paying a fine (e.g., creating a Payment record)
-        # This will likely interact with the Payment class
-        pass
+        raise NotImplementedError("This method will interact with the Payment class.")
 
-    # Getters and setters as needed
+    # Getters and setters
     def get_member_id(self) -> str:
         return self._member_id
+
+    def get_full_name(self) -> str:
+        return f"{self._first_name} {self._last_name}"
 
     def __str__(self):
         return f"LibraryMember(member_id='{self._member_id}', name='{self._first_name} {self._last_name}')"

@@ -1,12 +1,16 @@
 from datetime import date
- from typing import Optional
- from src.book import Book
- from src.library_member import LibraryMember
+from typing import Optional
+from src.book import Book
+from src.library_member import LibraryMember
 
- class Reservation:
+class Reservation:
+    STATUS_ACTIVE = "Active"
+    STATUS_COMPLETED = "Completed"
+    STATUS_CANCELED = "Canceled"
+
     def __init__(self, reservation_id: str, book: Book, member: LibraryMember,
                  reservation_date: date, notification_date: Optional[date],
-                 status: str):
+                 status: str = STATUS_ACTIVE):
         self._reservation_id = reservation_id
         self._book = book
         self._member = member
@@ -19,15 +23,14 @@ from datetime import date
         pass
 
     def cancel_reservation(self):
-        self._status = "Canceled"
+        self._status = self.STATUS_CANCELED
 
     def mark_as_active(self):
-        self._status = "Active"
+        self._status = self.STATUS_ACTIVE
 
     def mark_as_completed(self):
-        self._status = "Completed"
+        self._status = self.STATUS_COMPLETED
 
-    # Getters and setters as needed
     def get_book(self) -> Book:
         return self._book
 
@@ -35,4 +38,5 @@ from datetime import date
         return self._member
 
     def __str__(self):
-        return f"Reservation(reservation_id='{self._reservation_id}', book='{self._book}', member='{self._member}')"
+        return (f"Reservation(reservation_id='{self._reservation_id}', "
+                f"book='{self._book}', member='{self._member}')")

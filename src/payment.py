@@ -1,7 +1,7 @@
 from datetime import date
- from src.library_member import LibraryMember
+from src.library_member import LibraryMember
 
- class Payment:
+class Payment:
     def __init__(self, payment_id: str, member: LibraryMember, payment_date: date,
                  amount: float, payment_method: str, transaction_id: str,
                  payment_type: str):
@@ -21,9 +21,9 @@ from datetime import date
         # Implementation for recording the payment details in the system
         pass
 
-    # Getters and setters as needed
     def get_member(self) -> LibraryMember:
         return self._member
 
     def __str__(self):
-        return f"Payment(payment_id='{self._payment_id}', member='{self._member}', amount={self._amount})"
+        return (f"Payment(payment_id='{self._payment_id}', "
+                f"member='{self._member}', amount={self._amount})")

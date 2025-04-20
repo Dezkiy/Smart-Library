@@ -1,8 +1,8 @@
 from datetime import date, time
- from typing import Optional
- from src.library_member import LibraryMember  # Needed if you track registered members here
+from typing import Optional
+from src.library_member import LibraryMember  # Needed if you track registered members here
 
- class LibraryEvent:
+class LibraryEvent:
     def __init__(self, event_id: str, title: str, description: str,
                  event_date: date, start_time: time, end_time: time,
                  location: str, capacity: int, registration_deadline: Optional[date]):
@@ -15,7 +15,7 @@ from datetime import date, time
         self._location = location
         self._capacity = capacity
         self._registration_deadline = registration_deadline
-        self._registered_members = []  # Or use a separate Registration class
+        self._registered_members = []  # Temporarily handles registrations
 
     def register_member(self, member: LibraryMember):
         if len(self._registered_members) < self._capacity:
@@ -32,7 +32,6 @@ from datetime import date, time
     def get_available_seats(self) -> int:
         return self._capacity - len(self._registered_members)
 
-    # Getters and setters as needed
     def get_event_id(self) -> str:
         return self._event_id
 

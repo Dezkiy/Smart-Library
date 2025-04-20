@@ -1,10 +1,10 @@
 from typing import List, Optional  # For type hinting
 
- class Book:
+class Book:
     def __init__(self, title: str, isbn: str, publication_year: int,
                  authors: List[str], genre: str, edition: int,
                  publisher: str, total_copies: int, available_copies: int,
-                 cover_image_url: Optional[str]):
+                 cover_image_url: Optional[str] = None):
         self._title = title
         self._isbn = isbn
         self._publication_year = publication_year
@@ -29,21 +29,19 @@ from typing import List, Optional  # For type hinting
         return False
 
     def reserve(self):
-        # Implementation for reservation logic (e.g., adding to a reservation list)
-        # This might involve another class (Reservation)
-        pass
+        raise NotImplementedError("Reservation logic is handled elsewhere.")
 
     def is_available(self) -> bool:
         return self._available_copies > 0
 
-    # Getters (if needed)
+    # Getters
     def get_title(self) -> str:
         return self._title
 
     def get_isbn(self) -> str:
         return self._isbn
 
-    # Setters (if needed - use with caution and validation)
+    # Setters
     def set_available_copies(self, copies: int):
         if 0 <= copies <= self._total_copies:
             self._available_copies = copies

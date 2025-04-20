@@ -1,8 +1,9 @@
-from datetime import date
- from src.book import Book  # Import Book class
- from src.library_member import LibraryMember  # Import LibraryMember class
+from typing import Optional
+from datetime import date, timedelta
+from src.book import Book
+from src.library_member import LibraryMember
 
- class Loan:
+class Loan:
     def __init__(self, loan_id: str, book: Book, member: LibraryMember,
                  borrow_date: date, due_date: date, return_date: Optional[date] = None):
         self._loan_id = loan_id
@@ -19,12 +20,12 @@ from datetime import date
         return 0.0
 
     def extend_due_date(self, extension_days: int):
-        self._due_date = self._due_date + dateutil.relativedelta.relativedelta(days=+extension_days)
+        self._due_date += timedelta(days=extension_days)
 
     def mark_as_returned(self, return_date: date):
         self._return_date = return_date
 
-    # Getters and setters as needed
+    # Getters
     def get_book(self) -> Book:
         return self._book
 
