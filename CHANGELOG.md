@@ -1,4 +1,4 @@
-# Changelog
+# CHANGELOG
 
 ## Recent Changes
 
