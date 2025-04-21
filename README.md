@@ -77,3 +77,5 @@ This system will enable:
 - [Source Code Directory](src/) - Contains the source code files.
 - [Creational Patterns Justification.md](./Creational%20Patterns%20Justification.md) - For details on the creational design patterns used
 - [Creational Patterns Directory](creational_patterns/) - Implementation of various creational design patterns.
+- [Tests Directory](./tests/) - Contains all test files
+- [Test Coverage Report](./Test%20Coverage%20Report.md) - View test coverage metrics
