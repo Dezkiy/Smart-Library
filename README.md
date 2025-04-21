@@ -74,3 +74,6 @@ This system will enable:
 ## Assignment 10:
 
 - [Class Implementation Details Assignment 10.md](Class%20Implementation%20Details%20Assignment%2010.md) - For details on the language choice and key design decisions
+- [Source Code Directory](src/) - Contains the source code files.
+- [Creational Patterns Justification](#creational-patterns-justification) - For details on the creational design patterns used
+- [Creational Patterns Directory](creational_patterns/) - Implementation of various creational design patterns.
