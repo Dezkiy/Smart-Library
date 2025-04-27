@@ -80,3 +80,10 @@ This system will enable:
 - [Tests Directory](./tests/) - Contains all test files
 - [Test Coverage Report.md](./Test%20Coverage%20Report.md) - View test coverage metrics
 - [CHANGELOG.md](./CHANGELOG.md) - Version history and updates
+
+
+## Assignment 11:
+
+## Justification: Repository Layer Design
+
+The repository layer is implemented using a generic `Repository` interface (`repositories/repository.py`). This approach leverages Python's typing system (specifically, `TypeVar` and `Generic`) to avoid code duplication across entity-specific repositories.  For example, instead of writing separate CRUD implementations for `Book`, `LibraryMember`, etc., we define the common operations once in the `Repository` interface and then create entity-specific interfaces (e.g., `BookRepository`) that inherit from it.  This promotes code reuse and maintainability. Each entity-specific repository interface can also define methods unique to that entity (e.g., `BookRepository`'s `find_by_title`).
