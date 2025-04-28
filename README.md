@@ -90,3 +90,16 @@ The repository layer is implemented using a generic `Repository` interface (`rep
 
 - [Storage Abstraction Mechanism](./factories/Storage%20Abstraction%20Mechanism.md) - For explanation of Abstraction Mechanism choice.
 
+
+## Future-Proofing: Adding New Storage Backends
+
+### DatabaseBookRepository (SQLite)
+The system is designed to easily add new storage backends in the future. As an example, we have created a stub implementation for a `DatabaseBookRepository` that will save book data to an SQLite database.
+
+You can find the stub implementation here:
+- **[DatabaseBookRepository Stub](https://github.com/Mongameli-Shasha-01/Smart-Library/blob/main/repositories/database_book_repository.py)**
+
+
+### SQLite Database File
+For SQLite storage, we have also provided a basic `database.db` file that can be used for storing the data. You can refer to it in the project’s database integration section:
+- **[SQLite Database File](https://github.com/Mongameli-Shasha-01/Smart-Library/blob/main/data/database.db)**
