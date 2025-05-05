@@ -379,3 +379,25 @@ If you're exporting the OpenAPI spec:
 
 ![swagger-ui-screenshot](https://github.com/user-attachments/assets/94c9e8fd-1019-40ce-97ca-171304d51241)
 
+
+## 📁 Project Structure Quick Links
+
+### 🔗 API Endpoints
+- [`api/book_routes.py`](./api/book_routes.py) – Book API endpoints
+- [`api/member_routes.py`](./api/member_routes.py) – Member API endpoints
+- [`api/reservation_routes.py`](./api/reservation_routes.py) – Reservation API endpoints
+
+### 🧪 API Tests
+- [`tests/api/test_book_routes.py`](./tests/api/test_book_routes.py)
+- [`tests/api/test_member_routes.py`](./tests/api/test_member_routes.py)
+- [`tests/api/test_reservation_routes.py`](./tests/api/test_reservation_routes.py)
+
+### ⚙️ Service Layer
+- [`repositories/services/book_service.py`](./repositories/services/book_service.py)
+- [`repositories/services/member_service.py`](./repositories/services/member_service.py)
+- [`repositories/services/reservation_service.py`](./repositories/services/reservation_service.py)
+
+### 🧪 Service Layer Tests
+- [`tests/services/test_book_service.py`](./tests/services/test_book_service.py)
+- [`tests/services/test_member_service.py`](./tests/services/test_member_service.py)
+- [`tests/services/test_reservation_service.py`](./tests/services/test_reservation_service.py)
