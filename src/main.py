@@ -1,14 +1,30 @@
 from datetime import date
+from fastapi import FastAPI
+from api.book_routes import router as book_router
+from api.member_routes import router as member_router
+from api.reservation_routes import router as reservation_router
+
 from src.book import Book
 from src.library_member import LibraryMember
 from src.loan import Loan
 
+# === FastAPI Setup ===
+app = FastAPI(title="Smart Library API", version="1.0")
 
-def main():
+# Register API routers
+app.include_router(book_router)
+app.include_router(member_router)
+app.include_router(reservation_router)
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Smart Library API"}
+
+# === Demo Code for Domain Objects ===
+def demo_library_operations():
     # Create a Book object
     book1 = Book(
         "The Hitchhiker's Guide to the Galaxy", "978-0345391802", 1979,
-      
         ["Douglas Adams"], "Science Fiction", 1, "Pan Books", 10, 5, None
     )
 
@@ -39,5 +55,6 @@ def main():
         print(f"{book1.get_title()} could not be returned")
 
 
+# Only run the demo code if executed directly
 if __name__ == "__main__":
-    main()
+    demo_library_operations()
