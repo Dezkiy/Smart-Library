@@ -103,3 +103,279 @@ You can find the stub implementation here:
 ### SQLite Database File
 For SQLite storage, we have also provided a basic `database.db` file that can be used for storing the data. You can refer to it in the project’s database integration section:
 - **[SQLite Database File](https://github.com/Mongameli-Shasha-01/Smart-Library/blob/main/data/database.db)**
+
+
+## Assignment 12:
+## 📄 API Documentation
+
+The **Smart Library API** is documented using **FastAPI's Swagger UI**, providing interactive and auto-generated docs at runtime.
+
+### 🔗 Access the Swagger UI
+
+Start your FastAPI server and open:
+
+👉 **[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)**
+
+
+---
+
+## 📚 Endpoints Overview
+
+### 🔸 Books
+
+| Method | Endpoint         | Description           |
+|--------|------------------|-----------------------|
+| GET    | `/api/books/`    | List all books        |
+| POST   | `/api/books/`    | Add a new book        |
+| GET    | `/api/books/{id}`| Get a book by ID      |
+| DELETE | `/api/books/{id}`| Delete a book by ID   |
+
+### 🔸 Members
+
+| Method | Endpoint           | Description              |
+|--------|--------------------|--------------------------|
+| GET    | `/api/members/`    | List all members         |
+| POST   | `/api/members/`    | Register a new member    |
+| GET    | `/api/members/{id}`| Get a member by ID       |
+| DELETE | `/api/members/{id}`| Delete a member by ID    |
+
+### 🔸 Reservations
+
+| Method | Endpoint               | Description                |
+|--------|------------------------|----------------------------|
+| GET    | `/api/reservations/`   | List all reservations      |
+| POST   | `/api/reservations/`   | Make a new reservation     |
+
+---
+
+# 📘 Smart Library API Documentation
+
+## 📌 Overview
+
+This FastAPI-based Smart Library System offers RESTful endpoints to manage books, library members, and reservations.
+
+---
+
+## 🔗 Base URL
+
+```
+http://localhost:8000
+```
+
+---
+
+## 📚 Endpoints
+
+### 📘 Books
+
+#### ➕ Create Book
+
+* **POST** `/api/books/`
+* **Request Body:** `BookRequest`
+* **Response:** `BookResponse`
+* **Error:** 422 (Validation Error)
+
+#### 📄 List All Books
+
+* **GET** `/api/books/`
+* **Response:** `List[BookResponse]`
+
+#### 🔍 Get Book by ID
+
+* **GET** `/api/books/{book_id}`
+* **Response:** `BookResponse`
+* **Error:** 404 (Book not found)
+
+#### ❌ Delete Book
+
+* **DELETE** `/api/books/{book_id}`
+* **Response:** Success message
+* **Error:** 404 (Book not found)
+
+---
+
+### 👤 Members
+
+#### ➕ Create Member
+
+* **POST** `/api/members/`
+* **Request Body:** `MemberRequest`
+* **Response:** `MemberResponse`
+* **Error:** 422 (Validation Error)
+
+#### 📄 List All Members
+
+* **GET** `/api/members/`
+* **Response:** `List[MemberResponse]`
+
+#### 🔍 Get Member by ID
+
+* **GET** `/api/members/{member_id}`
+* **Response:** `MemberResponse`
+* **Error:** 404 (Member not found)
+
+#### ❌ Delete Member
+
+* **DELETE** `/api/members/{member_id}`
+* **Response:** Success message
+* **Error:** 404 (Member not found)
+
+---
+
+### 📝 Reservations
+
+#### ➕ Create Reservation
+
+* **POST** `/api/reservations/`
+* **Request Body:** `ReservationRequest`
+* **Response:** `ReservationResponse`
+* **Error:** 422 (Validation Error)
+
+#### 📄 List All Reservations
+
+* **GET** `/api/reservations/`
+* **Response:** `List[ReservationResponse]`
+
+#### 🔍 Get Reservation by ID
+
+* **GET** `/api/reservations/{reservation_id}`
+* **Response:** `ReservationResponse`
+* **Error:** 404 (Reservation not found)
+
+#### ❌ Delete Reservation
+
+* **DELETE** `/api/reservations/{reservation_id}`
+* **Response:** Success message
+* **Error:** 404 (Reservation not found)
+
+---
+
+## 🧾 Schema Models
+
+### 🔹 BookRequest
+
+```json
+{
+  "isbn": "978-1234567890",
+  "title": "Sample Book",
+  "publication_year": 2020,
+  "authors": ["Author One", "Author Two"],
+  "genre": "Fiction",
+  "edition": 1,
+  "publisher": "Book Publisher",
+  "total_copies": 10,
+  "available_copies": 10,
+  "description": "Optional book description"
+}
+```
+
+### 🔹 BookResponse
+
+```json
+{
+  "book_id": "B001",
+  "isbn": "978-1234567890",
+  "title": "Sample Book",
+  "publication_year": 2020,
+  "authors": ["Author One", "Author Two"],
+  "genre": "Fiction",
+  "edition": 1,
+  "publisher": "Book Publisher",
+  "total_copies": 10,
+  "available_copies": 10,
+  "description": "Optional book description"
+}
+```
+
+### 🔹 MemberRequest
+
+```json
+{
+  "member_id": "M001",
+  "first_name": "John",
+  "last_name": "Doe",
+  "date_of_birth": "1995-08-15",
+  "email": "john@example.com",
+  "phone_number": "1234567890",
+  "address": "123 Main St",
+  "membership_date": "2024-01-01",
+  "membership_type": "Regular",
+  "status": "Active"
+}
+```
+
+### 🔹 MemberResponse
+
+```json
+{
+  "member_id": "M001",
+  "first_name": "John",
+  "last_name": "Doe",
+  "date_of_birth": "1995-08-15",
+  "email": "john@example.com",
+  "phone_number": "1234567890",
+  "address": "123 Main St",
+  "membership_date": "2024-01-01",
+  "membership_type": "Regular",
+  "status": "Active"
+}
+```
+
+### 🔹 ReservationRequest
+
+```json
+{
+  "reservation_id": "R001",
+  "book_id": "B001",
+  "member_id": "M001",
+  "reservation_date": "2024-05-05"
+}
+```
+
+### 🔹 ReservationResponse
+
+```json
+{
+  "reservation_id": "R001",
+  "book_id": "B001",
+  "member_id": "M001",
+  "reservation_date": "2024-05-05"
+}
+```
+
+### 🔹 ValidationError Example
+
+```json
+{
+  "detail": [
+    {
+      "loc": ["body", "title"],
+      "msg": "field required",
+      "type": "value_error.missing"
+    }
+  ]
+}
+```
+
+---
+
+## 📷 Swagger UI Screenshot
+
+> ✅ Launch the server and visit: `http://localhost:8000/docs`
+>
+> 📸 Take a screenshot and save it under your `/docs` directory as `swagger_ui.png`
+
+---
+
+## 📁 Optional OpenAPI File
+
+If you're exporting the OpenAPI spec:
+
+* JSON: `http://localhost:8000/openapi.json`
+* Save it as: `/docs/openapi.json` or `/docs/openapi.yaml`
+
+
+## 🧾 Swagger UI Screenshot
+
+![swagger-ui-screenshot](https://github.com/user-attachments/assets/94c9e8fd-1019-40ce-97ca-171304d51241)
+
