@@ -1,3 +1,9 @@
 fastapi
 uvicorn
+httpx
 pytest
+sqlalchemy
+databases
+pydantic
+
+
