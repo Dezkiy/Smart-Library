@@ -401,3 +401,8 @@ If you're exporting the OpenAPI spec:
 - [`tests/services/test_book_service.py`](./tests/services/test_book_service.py)
 - [`tests/services/test_member_service.py`](./tests/services/test_member_service.py)
 - [`tests/services/test_reservation_service.py`](./tests/services/test_reservation_service.py)
+
+## Assignment 13:
+- [Branch Protection](./Protection.md)
+- [Reflection on CI Test Failures](./Reflection%20on%20CI%20Test%20Failures.md)
+- [CI Workflow Configuration](.github/workflows/ci.yml)
