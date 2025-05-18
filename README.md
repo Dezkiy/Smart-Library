@@ -17,8 +17,6 @@ This system will enable:
 
 * [SPECIFICATION.md](SPECIFICATION.md)
 * [ARCHITECTURE.md](ARCHITECTURE.md)
-* [SPECIFICATION.md](SPECIFICATION.md)
-* [ARCHITECTURE.md](ARCHITECTURE.md)
 
 ## Assignment 5:
 - [Use Case Diagrams.md](./Use%20Case%20Diagram.md)
