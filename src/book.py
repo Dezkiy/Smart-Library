@@ -1,6 +1,28 @@
 from typing import List, Optional  # For type hinting
 
 class Book:
+    """
+    Represents a book in the Smart Library system.
+
+    Attributes:
+        _title (str): The title of the book.
+        _isbn (str): The International Standard Book Number (ISBN) of the book.
+        _publication_year (int): The year the book was published.
+        _authors (List[str]): A list of authors for the book.
+        _genre (str): The genre of the book.
+        _edition (int): The edition number of the book.
+        _publisher (str): The publisher of the book.
+        _total_copies (int): The total number of copies available in the library.
+        _available_copies (int): The number of copies currently available for checkout.
+        _cover_image_url (Optional[str]): The URL to the book's cover image, if available.
+
+    Methods:
+        check_out(): Attempts to check out the book if available.
+        return_book(): Returns a book, increasing the available copies.
+        reserve(): Placeholder for reservation logic.
+        is_available(): Returns True if at least one copy is available.
+        Getters and setters for book attributes.
+    """
     def __init__(self, title: str, isbn: str, publication_year: int,
                  authors: List[str], genre: str, edition: int,
                  publisher: str, total_copies: int, available_copies: int,
