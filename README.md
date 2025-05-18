@@ -409,7 +409,7 @@ If you're exporting the OpenAPI spec:
 ## Assignment 14:
 ## 📚 Project Documentation
 
-- [🛠️ Contributing Guidelines](CONTRIBUTING.md)
-- [🗺️ Project Roadmap](ROADMAP.md)
+- [🛠️ Contributing Guidelines](Contributing.md)
+- [🗺️ Project Roadmap](Roadmap.md)
 - [🧠 Reflection: Assignment 14](Reflection%20Assignment%2014.md)
 
