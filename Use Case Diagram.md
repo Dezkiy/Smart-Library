@@ -68,3 +68,4 @@ graph TD
         Security -->|Protects User Data| Database["🗄️ Secure Database"]
 
     end
+```
