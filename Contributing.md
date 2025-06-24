@@ -36,6 +36,11 @@ We welcome pull requests from everyone. Please read the following guidelines bef
     ```bash
     pytest
     ```
+    
+5. (Optional) Run demo of the application from the project root:
+    ```bash
+    PYTHONPATH=. python src/main.py
+    ```
 
 ---
 
