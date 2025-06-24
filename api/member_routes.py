@@ -12,6 +12,7 @@ member_service = MemberService(member_repository)
 router = APIRouter(prefix="/api/members", tags=["Members"])
 
 class MemberRequest(BaseModel):
+    """Request model for creating or updating a library member."""
     member_id: str
     first_name: str
     last_name: str
@@ -23,11 +24,15 @@ class MemberRequest(BaseModel):
     membership_type: str
     status: str
 
+
 class MemberResponse(MemberRequest):
+    """Response model for returning member data to the client."""
     pass
+
 
 # 🔁 Helper function to convert domain model to Pydantic response
 def member_to_response(member: LibraryMember) -> MemberResponse:
+    """Convert a LibraryMember domain model instance to a MemberResponse Pydantic model."""
     return MemberResponse(
         member_id=member._member_id,
         first_name=member._first_name,
@@ -41,26 +46,34 @@ def member_to_response(member: LibraryMember) -> MemberResponse:
         status=member._status
     )
 
+
 @router.post("/", response_model=MemberResponse)
-def create_member(member: MemberRequest):
+def create_member(member: MemberRequest) -> MemberResponse:
+    """Register a new library member."""
     member_obj = LibraryMember(**member.dict())
     member_service.register_member(member_obj)
     return member_to_response(member_obj)
 
+
 @router.get("/", response_model=List[MemberResponse])
-def list_members():
+def list_members() -> List[MemberResponse]:
+    """Retrieve a list of all library members."""
     members = member_service.get_all_members()
     return [member_to_response(m) for m in members]
 
+
 @router.get("/{member_id}", response_model=MemberResponse)
-def get_member(member_id: str):
+def get_member(member_id: str) -> MemberResponse:
+    """Retrieve a specific member by member ID."""
     member = member_service.get_member(member_id)
     if not member:
         raise HTTPException(status_code=404, detail="Member not found")
     return member_to_response(member)
 
+
 @router.delete("/{member_id}")
-def delete_member(member_id: str):
+def delete_member(member_id: str) -> dict:
+    """Delete a member by member ID."""
     if member_service.remove_member(member_id):
         return {"message": f"Member {member_id} deleted"}
     raise HTTPException(status_code=404, detail="Member not found")

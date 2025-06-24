@@ -11,8 +11,10 @@ book_service = BookService(book_repository)
 
 router = APIRouter(prefix="/api/books", tags=["Books"])
 
+
 # Pydantic models
 class BookRequest(BaseModel):
+    """Request model for creating or updating a book."""
     title: str
     isbn: str
     publication_year: int
@@ -24,11 +26,15 @@ class BookRequest(BaseModel):
     available_copies: int
     cover_image_url: Optional[str] = None
 
+
 class BookResponse(BookRequest):
+    """Response model for returning book data to the client."""
     pass
+
 
 # 🔁 Helper function: Convert domain model to Pydantic model
 def book_to_response(book: Book) -> BookResponse:
+    """Convert a Book domain model instance to a BookResponse Pydantic model."""
     return BookResponse(
         title=book.get_title(),
         isbn=book.get_isbn(),
@@ -42,27 +48,35 @@ def book_to_response(book: Book) -> BookResponse:
         cover_image_url=book._cover_image_url
     )
 
+
 @router.get("/", response_model=List[BookResponse])
-def get_all_books():
+def get_all_books() -> List[BookResponse]:
+    """Retrieve all books in the library."""
     books = book_service.get_all_books()
     return [book_to_response(book) for book in books]
 
+
 @router.post("/", response_model=BookResponse)
-def create_book(book_data: BookRequest):
+def create_book(book_data: BookRequest) -> BookResponse:
+    """Create a new book entry in the library."""
     book = Book(**book_data.model_dump())
     book_service.create_book(book)
     return book_to_response(book)
 
+
 @router.put("/{isbn}", response_model=BookResponse)
-def update_book(isbn: str, book_data: BookRequest):
-    updated_book = Book(**book_data.dict())
+def update_book(isbn: str, book_data: BookRequest) -> BookResponse:
+    """Update an existing book's information by ISBN."""
+    updated_book = Book(**book_data.model_dump())
     result = book_service.update_book(isbn, updated_book)
     if not result:
         raise HTTPException(status_code=404, detail="Book not found")
     return book_to_response(updated_book)
 
+
 @router.post("/{isbn}/checkout")
-def checkout_book(isbn: str):
+def checkout_book(isbn: str) -> dict:
+    """Check out a book by ISBN."""
     success = book_service.checkout_book(isbn)
     if not success:
         raise HTTPException(status_code=400, detail="Book not available or not found")
