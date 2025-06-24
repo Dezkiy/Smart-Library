@@ -49,6 +49,11 @@ def get_all_books():
 
 @router.post("/", response_model=BookResponse)
 def create_book(book_data: BookRequest):
+    """Create a new book entry in the library. Return 400 if ISBN already exists."""
+    # Check for duplicate ISBN
+    existing_books = book_service.get_all_books()
+    if any(book.get_isbn() == book_data.isbn for book in existing_books):
+        raise HTTPException(status_code=400, detail="Book with this ISBN already exists")
     book = Book(**book_data.model_dump())
     book_service.create_book(book)
     return book_to_response(book)
