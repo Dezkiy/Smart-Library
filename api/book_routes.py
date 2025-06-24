@@ -60,7 +60,8 @@ def create_book(book_data: BookRequest):
 
 @router.put("/{isbn}", response_model=BookResponse)
 def update_book(isbn: str, book_data: BookRequest):
-    updated_book = Book(**book_data.dict())
+    """Update an existing book's information by ISBN."""
+    updated_book = Book(**book_data.model_dump())
     result = book_service.update_book(isbn, updated_book)
     if not result:
         raise HTTPException(status_code=404, detail="Book not found")
